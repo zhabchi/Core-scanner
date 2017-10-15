@@ -13,24 +13,21 @@
         <activity
             android:name=".LauncherActivity"
             android:label="@string/title_activity_launcher"
-            android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="userPortrait"
-                >
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".scanner">
-
-        </activity>
+        <activity android:name=".scanner"></activity>
 
         <meta-data
             android:name="com.google.android.gms.vision.DEPENDENCIES"
             android:value="ocr" />
 
-
+        <activity android:name=".DisplayCounter"></activity>
     </application>
 
 </manifest>
