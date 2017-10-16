@@ -26,8 +26,7 @@ import java.io.IOException;
 
 public class scanner extends AppCompatActivity {
     private static final String TAG = "Scanner";
-
-
+    private String barcode = "";
     CameraSource mCameraSource;
     private CameraSourcePreview mPreview;
     private GraphicOverlay<OcrGraphic> mGraphicOverlay;
@@ -41,7 +40,8 @@ public class scanner extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scanner);
 
-
+        Bundle bundle = getIntent().getExtras();
+        barcode = bundle.getString("barcode");
 
         mGraphicOverlay = (GraphicOverlay<OcrGraphic>) findViewById(R.id.graphicOverlay);
         mPreview = (CameraSourcePreview) findViewById(R.id.preview);
@@ -100,7 +100,9 @@ public class scanner extends AppCompatActivity {
             text = graphic.getTextBlock();
             if (text != null && text.getValue() != null) {
                 Intent displayCounter = new Intent(getApplicationContext(), DisplayCounter.class);
-                displayCounter.putExtra("message" , text.getValue());
+
+
+                displayCounter.putExtra("message" , text.getValue().concat("\n").concat(barcode));
                 setResult(CommonStatusCodes.SUCCESS, displayCounter);
                 startActivity(displayCounter);
                 finish();

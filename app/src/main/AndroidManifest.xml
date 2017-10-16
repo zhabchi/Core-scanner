@@ -21,13 +21,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".scanner"></activity>
+        <activity android:name=".scanner" />
 
         <meta-data
             android:name="com.google.android.gms.vision.DEPENDENCIES"
             android:value="ocr" />
 
-        <activity android:name=".DisplayCounter"></activity>
+        <activity android:name=".DisplayCounter" />
+        <activity android:name=".qrscanner"></activity>
     </application>
 
 </manifest>

@@ -33,15 +33,10 @@ public class LauncherActivity extends AppCompatActivity {
         });
 
 
-        if(Build.VERSION.SDK_INT > Build.VERSION_CODES.M && checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED)
-        {
-            requestPermissions( new String[]{Manifest.permission.CAMERA}, CAMERA_PERMISSION);
-        }
-        else
-        {
-            Intent intent_scanner = new Intent(getApplicationContext(), scanner.class);
-            startActivity(intent_scanner);
-            finish();
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M && checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+            requestPermissions(new String[]{Manifest.permission.CAMERA}, CAMERA_PERMISSION);
+        } else {
+            startApplicationMainActivity();
         }
     }
 
@@ -56,9 +51,7 @@ public class LauncherActivity extends AppCompatActivity {
 
                     // permission was granted, yay! Do the
                     // contacts-related task you need to do.
-                    Intent intent_scanner = new Intent(getApplicationContext(), scanner.class);
-                    startActivity(intent_scanner);
-                    finish();
+                    startApplicationMainActivity();
 
                 } else {
 
@@ -74,4 +67,10 @@ public class LauncherActivity extends AppCompatActivity {
         }
     }
 
+
+    private void startApplicationMainActivity() {
+        Intent intent_scanner = new Intent(getApplicationContext(), qrscanner.class);
+        startActivity(intent_scanner);
+        finish();
+    }
 }
