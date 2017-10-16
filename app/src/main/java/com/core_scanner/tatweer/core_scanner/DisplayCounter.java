@@ -15,9 +15,9 @@ public class DisplayCounter extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         String message = bundle.getString("message");
 
-        Typeface myTypeface = Typeface.createFromAsset(this.getAssets(), "led_real.ttf");
+        //Typeface myTypeface = Typeface.createFromAsset(this.getAssets(), "led_real.ttf");
         TextView digital= (TextView) findViewById(R.id.txtDisplayCounter);
-        digital.setTypeface(myTypeface);
+        //digital.setTypeface(myTypeface);
 
         TextView txtView = (TextView) findViewById(R.id.txtDisplayCounter);
         txtView.setText(message);

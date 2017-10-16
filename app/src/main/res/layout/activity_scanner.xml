@@ -3,12 +3,13 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/topLayout"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:keepScreenOn="true">
 
     <android.support.v7.widget.AppCompatTextView
-        android:text="Scan the counter and Tap the result when it shows on the screen in a box"
+        android:text="@string/tip_scanner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 

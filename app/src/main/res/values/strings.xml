@@ -2,4 +2,6 @@
     <string name="app_name">Core-scanner</string>
     <string name="title_activity_launcher">HODICO - Scanner</string>
     <string name="title_activity_qrscanner">QRscanner</string>
+    <string name="tip_qr_scanner">Scan QR Code and Tap the result when it shows on the screen in a box</string>
+    <string name="tip_scanner">Scan the counter and Tap the result when it shows on the screen in a box</string>
 </resources>
